@@ -1,34 +1,43 @@
+// src/App.tsx
+import Layout from "./components/layout/Layout";
+import Container from "./components/ui/Container";
+import Button from "./components/ui/Button";
+import HeroBanner from "./components/sections/HeroBanner";
+import MenuSection from "./components/sections/MenuSection";
+import AboutSection from "./components/sections/AboutSection";
+
 function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold text-gray-800 mb-4">
-          ¡Tailwind CSS v4 está funcionando!
-        </h1>
-        <p className="text-lg text-gray-600 mb-6">
-          Mi proyecto React con TypeScript y Tailwind CSS
-        </p>
-        <div className="bg-white rounded-lg shadow-md p-6 max-w-md mx-auto">
-          <h2 className="text-2xl font-semibold text-indigo-700 mb-3">
-            Próximos pasos
-          </h2>
-          <ul className="text-left text-gray-700 space-y-2">
-            <li className="flex items-center">
-              <span className="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
-              Configurar Tailwind CSS ✓
-            </li>
-            <li className="flex items-center">
-              <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
-              Crear componentes de la todo list
-            </li>
-            <li className="flex items-center">
-              <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
-              Implementar funcionalidades
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
+    <Layout>
+      <HeroBanner />
+      <MenuSection />
+      <AboutSection />
+      <section id="contact" className="py-16 bg-black">
+        <Container>
+          <div className="text-center text-white mx-2">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              ¿Tienes alguna pregunta?
+            </h2>
+            <p className="text-sm md:text-base mb-8 text-stone-100">
+              Estamos aquí para ayudarte. Contáctanos y resolveremos todas tus
+              dudas
+            </p>
+            <div className="flex flex-col md:flex-row gap-4 justify-center">
+              <Button variant="secondary" size="md">
+                WhatsApp: 921 957 787
+              </Button>
+              <Button
+                variant="outline"
+                size="md"
+                className="bg-white/10 border-white/30 text-white hover:bg-white/20"
+              >
+                Email: hola@burgerapp.com
+              </Button>
+            </div>
+          </div>
+        </Container>
+      </section>
+    </Layout>
   );
 }
 
